@@ -4,4 +4,4 @@ This project is a template for creating new projects that use the HTML5 Canvas A
 
 ## Demo
 
-[Canvas Circle Collision](https://drimm.github.io/canvas-starter)
+[Canvas Circle Collision](https://danielgri.github.io/canvas-starter/)
