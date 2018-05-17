@@ -1,0 +1,12 @@
+.container{
+  width: 800px;
+}
+header{
+  margin: 2rem 0;
+}
+.docs {
+  font-weight: 400;
+}
+#canvas{
+  background-color: #333;
+}
