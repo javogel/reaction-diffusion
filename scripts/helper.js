@@ -1,6 +1,6 @@
 "use strict";
 
-function rotate(vector, angle, reverse) {
+export function rotate(vector, angle, reverse) {
 	let sin = Math.sin(angle);
 	let cos = Math.cos(angle);
 	return {
@@ -9,18 +9,18 @@ function rotate(vector, angle, reverse) {
 	};
 }
 
-function getDist(distanceX, distanceY) {
+export function getDist(distanceX, distanceY) {
 	return Math.sqrt(distanceX ** 2 + distanceY ** 2)
 }
 
-function getAngle(distanceX, distanceY) {
+export function getAngle(distanceX, distanceY) {
 	return Math.atan2(distanceY, distanceX)
 }
 
-function collisionReaction(firstVelocity, firstMass, secondVelocity, secondMass) {
+export function collisionReaction(firstVelocity, firstMass, secondVelocity, secondMass) {
 	return ((secondMass - firstMass) * secondVelocity + 2 * firstMass * firstVelocity) / (secondMass + firstMass)
 }
 
-function randomBetween(min, max) {
+export function randomBetween(min, max) {
 	return Math.floor(Math.random() * (max - (min))) + (min)
 }

@@ -1,8 +1,11 @@
 "use strict";
 
-class Ball {
+import {randomBetween, getDist, getAngle, collisionReaction, rotate} from './helper.js';
 
-  constructor(x, y, r) {
+export default class Ball {
+
+  constructor(el, x, y, r) {
+    this.element = el; 
     this.pos = { x, y };
     this.velocity = { x: randomBetween(-3, 3), y: randomBetween(-3, 3) };
     this.radius = r;
@@ -43,14 +46,15 @@ class Ball {
   }
 
   checkBoundaryCollision() {
-    if (this.pos.x > canvas.width - this.radius) {
-      this.pos.x = canvas.width - this.radius;
+    
+    if (this.pos.x > this.element.width - this.radius) {
+      this.pos.x = this.element.width - this.radius;
       this.velocity.x *= -1;
     } else if (this.pos.x < this.radius) {
       this.pos.x = this.radius;
       this.velocity.x *= -1;
-    } else if (this.pos.y > canvas.height - this.radius) {
-      this.pos.y = canvas.height - this.radius;
+    } else if (this.pos.y > this.element.height - this.radius) {
+      this.pos.y = this.element.height - this.radius;
       this.velocity.y *= -1;
     } else if (this.pos.y < this.radius) {
       this.pos.y = this.radius;
@@ -59,6 +63,7 @@ class Ball {
   }
 
   draw() {
+    let ctx = this.element.getContext('2d');
     ctx.beginPath();
     ctx.arc(this.pos.x, this.pos.y, this.radius, 0, Math.PI * 2, true);
     ctx.closePath();

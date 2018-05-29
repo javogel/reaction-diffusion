@@ -6,8 +6,11 @@ let ctx = canvas.getContext('2d');
 let raf;
 let balls = [];
 
+import Ball from './ball.js';
+import {randomBetween} from './helper.js';
+
 function init() {
-  balls[0] = new Ball(100, 100, 50);
+  balls[0] = new Ball(canvas, 100, 100, 50);
   balls[0].draw();
   raf = window.requestAnimationFrame(draw);
 }
@@ -34,5 +37,5 @@ init()
 canvas.addEventListener('click', function (e) {
   let x = e.clientX - canvas.offsetLeft - cont.offsetLeft;
   let y = e.clientY - canvas.offsetTop;
-  balls.push(new Ball(x, y, randomBetween(30, 60)));
+  balls.push(new Ball(canvas, x, y, randomBetween(30, 60)));
 });
