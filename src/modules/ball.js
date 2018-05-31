@@ -1,5 +1,3 @@
-"use strict";
-
 import {randomBetween, getDist, getAngle, collisionReaction, rotate} from './helper.js';
 
 export default class Ball {

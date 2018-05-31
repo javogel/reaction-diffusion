@@ -1,5 +1,3 @@
-"use strict";
-
 export function rotate(vector, angle, reverse) {
 	let sin = Math.sin(angle);
 	let cos = Math.cos(angle);

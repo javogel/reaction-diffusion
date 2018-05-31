@@ -1,13 +1,12 @@
-"use strict";
+import './main.css';
+import Ball from './modules/ball.js';
+import {randomBetween} from './modules/helper.js';
 
 let cont = document.querySelector('.container');
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 let raf;
 let balls = [];
-
-import Ball from './ball.js';
-import {randomBetween} from './helper.js';
 
 function init() {
   balls[0] = new Ball(canvas, 100, 100, 50);
