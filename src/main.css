@@ -1,12 +1,32 @@
-.container{
-  width: 800px;
+.container {
+  width: 800 px;
 }
-header{
-  margin: 2rem 0;
-}
+
+/* header {
+    margin: 2em;
+} */
+
 .docs {
   font-weight: 400;
 }
-#canvas{
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  width: 100vu;
+  height: 100vh;
+}
+
+canvas {
   background-color: #333;
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#fail {
+  color: red;
+  white-space: pre-wrap;
+  max-width: 600px;
 }

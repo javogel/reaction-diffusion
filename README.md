@@ -1,7 +1,7 @@
-# Webpack Starter with HTML5 Canvas (Circle collision)
+# Reaction Diffusion with Javascript and WebGL
 
-This project is a Webpack template for creating new projects that use the HTML5 Canvas API.
+Simple Reaction-Diffusion implementation
 
 ## Demo
 
-[Canvas Circle Collision](https://danielgri.github.io/webpack-starter)
+[Link coming soon](/)
