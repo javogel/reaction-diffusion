@@ -54,7 +54,8 @@ function init(img) {
 
 	function step() {
 		gl.useProgram(timestep_prog);
-		for (var i = 0; i < 50; i++) {
+
+		for (var i = 0; i < 2; i++) {
 			gl.bindTexture(gl.TEXTURE_2D, [t1, t2][i % 2]);
 			gl.bindFramebuffer(gl.FRAMEBUFFER, [fb2, fb1][i % 2]);
 			gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
@@ -87,12 +88,14 @@ function getInitialState(img) {
 				in_stripe = dd > 50 && dd < 55 && ry < 20;
 			const index = img.length - 4 * i
 			const lightness = parseInt((img[index] + img[index + 1] + img[index + 2]) / 3);
-			if (lightness < 80) {
-				a[4 * i + 0] = 0.99;
+
+			a[4 * i + 0] = 1.0;
+			if (lightness < 50) {
+				a[4 * i + 1] = 1.0;
 			} else {
-				a[4 * i + 0] = -0.7;
+				a[4 * i + 1] = 0;
 			}
-			a[4 * i + 1] = -0.3;
+
 		}
 	}
 
@@ -189,4 +192,4 @@ img.onload = function () {
 }
 
 
-img.src = './assets/7.jpg';
+img.src = './assets/3.jpg';
